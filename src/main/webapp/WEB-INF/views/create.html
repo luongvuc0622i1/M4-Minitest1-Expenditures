@@ -4,25 +4,29 @@
 <body>
 <h3>Add Product</h3>
 <p>
-  <a th:href="@{/product}">
-    Back to product list
+  <a th:href="@{/expenditures}">
+    Back to expenditures list
   </a>
 </p>
 <div id="form">
-  <form th:action="@{/product/save}" th:object="${productForm}"
+  <form th:action="@{/expenditures/save}" th:object="${expendituresForm}"
         method="POST" novalidate="novalidate" enctype="multipart/form-data">
-    <input type="hidden" th:field="*{id}"/>
+    <input type="hidden" th:field="*{expenditures_id}"/>
     <div>
       <label>Name</label>
-      <input type="text" th:field="*{name}"/>
+      <input type="text" th:field="*{expenditures_name}"/>
+    </div>
+    <div>
+      <label>Money</label>
+      <input type="text" th:field="*{expenditures_money}"/>
     </div>
     <div>
       <label>Description</label>
-      <input type="text" th:field="*{description}"/>
+      <input type="text" th:field="*{expenditures_description}"/>
     </div>
     <div>
       <label>Image</label>
-      <input type="file" th:field="*{image}"/>
+      <input type="file" th:field="*{expenditures_image}"/>
     </div>
     <input type="submit" value="Save"/>
   </form>

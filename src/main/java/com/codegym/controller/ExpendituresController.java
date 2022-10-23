@@ -4,6 +4,7 @@ import com.codegym.model.Expenditures;
 import com.codegym.model.ExpendituresForm;
 import com.codegym.service.expenditures.IExpendituresService;
 import com.codegym.service.expenditures.ExpendituresService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +23,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/expenditures")
 public class ExpendituresController {
-    private final IExpendituresService expendituresService = new ExpendituresService();
+    @Autowired
+    private IExpendituresService expendituresService;
 
     @GetMapping("")
     public String index(Model model) {
@@ -51,7 +53,7 @@ public class ExpendituresController {
             ex.printStackTrace();
         }
         Expenditures expenditures = new Expenditures(expendituresForm.getExpenditures_id(), expendituresForm.getExpenditures_name(),
-                expendituresForm.getExpenditures_money(), expendituresForm.getExpenditures_description(), expendituresForm.getListExpenditure(), fileName);
+                expendituresForm.getExpenditures_money(), expendituresForm.getExpenditures_description(), null, fileName);
         expendituresService.save(expenditures);
         ModelAndView modelAndView = new ModelAndView("/create");
         modelAndView.addObject("expendituresForm", expendituresForm);

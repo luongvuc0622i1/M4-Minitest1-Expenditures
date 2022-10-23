@@ -9,7 +9,7 @@ public class ExpendituresForm {
     private String expenditures_name;
     private int expenditures_money;
     private String expenditures_description;
-    private List<Expenditure> listExpenditure;
+//    private List<Expenditure> listExpenditure;
     private MultipartFile expenditures_image;
 
     public ExpendituresForm() {
@@ -47,13 +47,13 @@ public class ExpendituresForm {
         this.expenditures_description = expenditures_description;
     }
 
-    public List<Expenditure> getListExpenditure() {
-        return listExpenditure;
-    }
-
-    public void setListExpenditure(List<Expenditure> listExpenditure) {
-        this.listExpenditure = listExpenditure;
-    }
+//    public List<Expenditure> getListExpenditure() {
+//        return listExpenditure;
+//    }
+//
+//    public void setListExpenditure(List<Expenditure> listExpenditure) {
+//        this.listExpenditure = listExpenditure;
+//    }
 
     public MultipartFile getExpenditures_image() {
         return expenditures_image;
