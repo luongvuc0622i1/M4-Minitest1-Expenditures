@@ -15,8 +15,9 @@
     <th>Name</th>
     <th>Money</th>
     <th>Description</th>
-    <th>Description</th>
     <th>Image</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
   </thead>
   <tbody>
@@ -24,8 +25,9 @@
     <td th:text="${e.expenditures_name}"></td>
     <td th:text="${e.expenditures_money}"></td>
     <td th:text="${e.expenditures_description}"></td>
-    <td th:text="${e.listExpenditure}"></td>
     <td><img width="100" height="100" th:src="@{'/image/' + ${e.expenditures_image}}" alt=""></td>
+    <td><a th:href="@{/edit-expenditures/__${e.expenditures_id}__ }">Edit</a></td>
+    <td><a th:href="@{/delete-expenditures/__${e.expenditures_id}__ }">Delete</a></td>
   </tr>
   </tbody>
 </table>
